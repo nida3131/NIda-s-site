@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nida's Magic — Chi Sono & Invia Magia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+
+  <style>
+    /* Contenitore principale che spinge tutto al centro del monitor */
+    .super-contenitore-chisono {
+      max-width: 850px;
+      margin: 80px auto 120px auto !important;
+      padding: 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra i blocchi principali */
+      text-align: center;  /* Centra tutti i testi */
+    }
+
+    /* I due blocchi separati: enormi, spaziosi e simmetrici */
+    .scatola-centrata-esclusiva {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 28px !important;
+      padding: 70px 50px !important; /* Tantissimo spazio interno */
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra il contenuto interno */
+    }
+
+    /* Enorme distacco vuoto tra il primo blocco (spiegazioni) e il secondo (video) */
+    .grande-distacco-vuoto {
+      height: 100px;
+      width: 100%;
+    }
+
+    /* Titoli monumentali e centrati */
+    .titolo-centrato-gigante {
+      font-family: 'Cinzel', serif !important;
+      color: var(--red) !important;
+      font-size: 38px !important; /* Scritta molto grande */
+      letter-spacing: 2px !important;
+      margin-bottom: 30px !important;
+      text-align: center !important;
+    }
+
+    /* Testi dei paragrafi enormi e distanziati per leggerli al volo */
+    .testo-centrato-gigante {
+      font-size: 21px !important; /* Font incrementato */
+      line-height: 2.0 !important; /* Righe molto distanti */
+      color: #f0f0f0 !important;
+      text-align: center !important;
+      max-width: 750px;
+      margin-bottom: 25px !important;
+    }
+
+    /* Box scuro per i passaggi del video (completamente centrato) */
+    .scatola-passaggi-centrata {
+      background: rgba(0, 0, 0, 0.4) !important;
+      border-top: 5px solid var(--red) !important; /* Linea rossa superiore centrata */
+      padding: 45px !important;
+      border-radius: 20px !important;
+      margin-top: 20px !important;
+      margin-bottom: 60px !important;
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 35px; /* Spazio netto tra punto 1, 2 e 3 */
+    }
+
+    .titolo-passaggi-centrato {
+      font-family: 'Cinzel', serif !important;
+      font-size: 22px !important;
+      color: #fff !important;
+      margin-bottom: 10px !important;
+      text-align: center !important;
+    }
+
+    /* Struttura del singolo passaggio verticale e centrata */
+    .singolo-passo-verticale {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      max-width: 550px;
+    }
+
+    /* Cerchio rosso con il numero grande */
+    .cerchione-numero {
+      background: var(--red) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+      font-size: 18px !important;
+      min-width: 40px !important;
+      height: 40px !important;
+      border-radius: 50% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    .testo-passo-gigante {
+      font-size: 18px !important;
+      color: #e0e0e0 !important;
+      line-height: 1.7 !important;
+    }
+
+    /* STRUTTURA DEL FORM TOTALMENTE CENTRATA */
+    .form-centrato-monumentale {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 45px; /* Spazio enorme tra un campo e l'altro */
+    }
+
+    .blocco-campo-centrato {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center; /* Centra l'etichetta e la casella */
+    }
+
+    .blocco-campo-centrato label {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      letter-spacing: 0.5px !important;
+      text-align: center !important;
+    }
+
+    /* Caselle di input e textarea enormi e con testo di scrittura centrato */
+    .blocco-campo-centrato input[type="text"],
+    .blocco-campo-centrato textarea {
+      width: 100% !important;
+      padding: 22px 26px !important; /* Cuscinetto d'aria enorme dentro le caselle */
+      background: rgba(255, 255, 255, 0.06) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 16px !important;
+      color: #fff !important;
+      font-family: 'Raleway', sans-serif !important;
+      font-size: 18px !important; /* Scrittura grande */
+      line-height: 1.6 !important;
+      text-align: center !important; /* Centra il testo dentro i rettangoli di scrittura */
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .blocco-campo-centrato input:focus,
+    .blocco-campo-centrato textarea:focus {
+      outline: none;
+      border-color: var(--red) !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Tasto rosso monumentale al centro */
+    .tastone-rosso-centrato {
+      background: var(--red) !important;
+      color: #fff !important;
+      cursor: pointer !important;
+      border: none !important;
+      padding: 24px 75px !important; /* Pulsante altissimo e larghissimo */
+      font-size: 20px !important;    /* Scritta nel tasto gigante */
+      font-weight: 700 !important;
+      border-radius: 16px !important;
+      letter-spacing: 1px !important;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .tastone-rosso-centrato:hover {
+      background: var(--red-dark) !important;
+      transform: translateY(-3px);
+    }
+
+    /* Sistemazione per telefoni */
+    @media (max-width: 650px) {
+      .scatola-centrata-esclusiva { padding: 40px 20px !important; }
+      .grande-distacco-vuoto { height: 50px; }
+      .titolo-centrato-gigante { font-size: 28px !important; }
+      .testo-centrato-gigante { font-size: 17px !important; }
+      .form-centrato-monumentale { gap: 35px; }
+    }
+  </style>
+</head>
+<body>
+ 
+<header>
+  <a class="header-brand" href="Sito_di_magie.html">
+    <img src="logo.png" class="logo" alt="Logo Nida's Magic">
+    <span class="header-title">Nida's <span>Magic</span></span>
+  </a>
+ 
+  <nav class="desktop-nav">
+    <a href="Sito_di_magie.html" class="nav-home">Home</a>
+    <a href="chi_sono.html" class="active">Invia una magia</a>
+    <a href="Spiegazione_1.html">Erdnase Color Change</a>
+    <a href="Spiegazione_2.html">Double Lift</a>
+    <a href="Spiegazione_3.html">Marlow Tilt</a>
+    <a href="Spiegazione_4.html">Rub-A-Dub Vanish</a>
+  </nav>
+</header>
+ 
+<section class="page-hero">
+  <h2>Invia il tuo Video & chi sono</h2>
+  <p>Scopri la mia passione per l'illusionismo e inviami i tuoi video da analizzare.</p>
+</section>
+ 
+<main class="super-contenitore-chisono">
+  
+  <section class="scatola-centrata-esclusiva">
+    <h2 class="titolo-centrato-gigante">La mia Passione</h2>
+    <p class="testo-centrato-gigante">
+      Benvenuto nel mio spazio dedicato all'arte della magia e della cartomagia. Sono Nida, e ho creato questo sito per condividere la mia passione, analizzare i movimenti più complessi e svelare i segreti dietro le grandi illusioni. Se ami la magia quanto me, sei nel posto giusto.
+    </p>
+    <p class="testo-centrato-gigante">
+      In questo sito ti spiegherò passo dopo passo le tecniche, i giochi di prestigio e i dettagli teorici per permetterti di sbalordire chiunque. L'allenamento e la costanza sono le chiavi principali per diventare un vero illusionista.
+    </p>
+  </section>
+
+  <div class="grande-distacco-vuoto"></div>
+
+  <section class="scatola-centrata-esclusiva">
+    <h2 class="titolo-centrato-gigante">Vuoi mandarmi un video?</h2>
+    <p class="testo-centrato-gigante" style="color: #ccc; margin-bottom: 40px !important;">
+      Se hai registrato un trucco o hai trovato un video di cui non riesci a capire il segreto, puoi inviarmelo seguendo queste semplici istruzioni.
+    </p>
+
+    <div class="scatola-passaggi-centrata">
+      <h3 class="titolo-passaggi-centrato">Come fare per il video?</h3>
+      
+      <div class="singolo-passo-verticale">
+        <span class="cerchione-numero">1</span>
+        <p class="testo-passo-gigante">Carica il tuo video gratis su <strong>Google Drive</strong>, <strong>WeTransfer</strong> o <strong>YouTube</strong> (mettilo come "Non elencato").</p>
+      </div>
+      
+      <div class="singolo-passo-verticale">
+        <span class="cerchione-numero">2</span>
+        <p class="testo-passo-gigante">Copia il link del video che hai appena caricato.</p>
+      </div>
+      
+      <div class="singolo-passo-verticale">
+        <span class="cerchione-numero">3</span>
+        <p class="testo-passo-gigante">Incolla il link nel modulo qui sotto insieme al tuo messaggio e premi sul tastone rosso.</p>
+      </div>
+    </div>
+
+    <form class="form-centrato-monumentale" action="mailto:nidasioriccardo@gmail.com" method="GET" enctype="text/plain">
+      
+      <input type="hidden" name="subject" value="Nuova proposta di Magia da analizzare!">
+
+      <div class="blocco-campo-centrato">
+        <label for="name">Il tuo Nome o Nome d'arte</label>
+        <input type="text" id="name" name="Nome" placeholder="Scrivi qui il tuo nome..." required>
+      </div>
+
+      <div class="blocco-campo-centrato">
+        <label for="magic-name">Nome del trucco (se lo conosci)</label>
+        <input type="text" id="magic-name" name="Nome_Magia" placeholder="Es. Erdnase Color Change, Double Lift...">
+      </div>
+
+      <div class="blocco-campo-centrato">
+        <label for="message">Il tuo messaggio + INCOLLA QUI IL LINK DEL VIDEO</label>
+        <textarea id="message" name="Messaggio_e_Link" rows="7" placeholder="Ciao Nida, ecco il link del mio video: (INCOLLA IL LINK QUI)... Raccontami qualcosa sul trucco!" required></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="tastone-rosso-centrato">Invia via Email</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+ 
+<footer>
+  © 2026 — <span>Nida's Magic</span> · Tutti i diritti riservati
+</footer>
+ 
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nida's Magic — Erdnase Color Change</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>
+    .magic-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 32px 80px;
+    }
+ 
+    .magic-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+ 
+    .magic-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(24px, 4vw, 40px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+      line-height: 1.2;
+    }
+ 
+    .magic-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 36px;
+      background: #000;
+    }
+ 
+    .magic-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+ 
+    .magic-desc {
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+    }
+ 
+    .magic-desc h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+    }
+ 
+    .magic-desc p {
+      color: #ccc;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+ 
+    .magic-desc p:last-child {
+      margin-bottom: 0;
+    }
+ 
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+ 
+    .back-btn::before {
+      content: "←";
+      transition: transform 0.2s;
+    }
+ 
+    .back-btn:hover {
+      color: #fff;
+    }
+ 
+    .back-btn:hover::before {
+      transform: translateX(-4px);
+    }
+ 
+    @media (max-width: 600px) {
+      .magic-wrap {
+        padding: 28px 20px 60px;
+      }
+ 
+      .magic-desc {
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+<!-- ── HEADER ── -->
+<header>
+  <a class="header-brand" href="Sito_di_magie.html">
+    <img src="logo.png" class="logo" alt="Logo Nida's Magic">
+    <span class="header-title">Nida's <span>Magic</span></span>
+  </a>
+ 
+  <nav class="desktop-nav">
+    <a href="Sito_di_magie.html" class="nav-home">Home</a>
+    <a href="chi_sono.html">Invia una magia</a>
+    <a href="Spiegazione_1.html">Erdnase Color Change</a>
+    <a href="Spiegazione_2.html">Double Lift</a>
+    <a href="Spiegazione_3.html" class="active">Marlo Tilt</a>
+    <a href="Spiegazione_4.html">Rub-A-Dub Vanish</a>
+  </nav>
+ 
+  <button class="hamburger" id="hamburger" aria-label="Apri menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+ 
+<!-- ── MOBILE DRAWER ── -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="Sito_di_magie.html">Home</a>
+  <a href="chi_sono.html">Chi sono?</a>
+  <a href="Spiegazione_1.html" class="active">Erdnase Color Change</a>
+  <a href="Spiegazione_2.html">Double Lift</a>
+  <a href="Spiegazione_3.html">Marlow Tilt</a>
+  <a href="Spiegazione_4.html">Rub-A-Dub Vanish</a>
+</nav>
+ 
+<!-- ── CONTENUTO ── -->
+<div class="magic-wrap">
+ 
+  <a class="back-btn" href="Sito_di_magie.html">Torna alle magie</a>
+ 
+  <div style="margin-top: 28px;">
+    <p class="magic-label">Magia 03</p>
+    <h1 class="magic-title">Marlow Tilt</h1>
+  </div>
+ 
+  <div class="magic-video">
+    <iframe src="https://www.youtube.com/embed/dGrWNm0cEXA" allowfullscreen loading="lazy"></iframe>
+  </div>
+ 
+  <div class="magic-desc">
+  <h3>La spiegazione</h3>
+  <p>
+    Il Marlo Tilt è un'illusione ottica micidiale inventata dal genio della magia Ed Marlo.
+  </p>
+  <p>
+    Prendi la carta dello spettatore e la spingi chiaramente al centro del mazzo sotto i suoi occhi, ma un millesimo di secondo dopo la carta si ritrova magicamente in cima.
+  </p>
+  <p>
+    Il segreto sta nel creare una piccolissima fessura segreta sul retro del mazzo con il pollice. Il pubblico è convinto che la carta entri nel mezzo, ma in realtà scivola indisturbata in seconda posizione.
+  </p>
+</div>
+ 
+</div>
+ 
+<!-- ── FOOTER ── -->
+<footer>
+  © 2026 — <span>Nida's Magic</span> · Tutti i diritti riservati
+</footer>
+ 
+<script>
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobileNav');
+ 
+  btn.addEventListener('click', () => {
+    const open = btn.classList.toggle('open');
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+ 
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+ 
+</body>
+</html>
+ 
